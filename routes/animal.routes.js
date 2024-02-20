@@ -9,7 +9,7 @@ const{
     getAnimalById,
     putAnimales,
     animalesDelete} = require('../controllers/animal.controller');
-const { especieExistente, idExistente, esRoleValido } = require('../helpers/db-animalValidator');
+const { idExistente } = require('../helpers/db-animalValidator');
 
 const router = Router();
 
@@ -28,7 +28,8 @@ router.put(
     [
         check('id', 'No es un id valido').isMongoId(),
         check('id').custom(idExistente),
-        check('role').custom(esRoleValido),
+        check('tipo', 'El tipo de animal es obligatorio').not().isEmpty(),
+        check('especie', 'La especie no puede estar vacio').not().isEmpty(),
         validarCampos
     ], putAnimales);
 
@@ -44,8 +45,8 @@ router.post(
     "/",
     [
         check('nombre', 'El nombre no puede estar vacio').not().isEmpty(),
-        check('especie').custom(especieExistente),
-        check('role').custom(esRoleValido),
+        check('tipo', 'El tipo de animal es obligatorio').not().isEmpty(),
+        check('especie', 'La especie no puede estar vacio').not().isEmpty(),
         validarCampos
     ], animalesPost);
 

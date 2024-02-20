@@ -29,12 +29,7 @@ const getAnimalById = async (req, res) => {
 
 const putAnimales = async(req, res = response) => {
     const {id} = req.params;
-    const { _id, especie, role, google, ...resto } = req.body;
-
-    if(especie){
-        const salt = bcryptjs.genSaltSync();
-        resto.especie = bcryptjs.hashSync(especie, salt);
-    }
+    const { _id, ...resto } = req.body;
 
     const animal = await Animal.findByIdAndUpdate(id , resto);
 
@@ -50,15 +45,13 @@ const animalesDelete = async (req, res) => {
 
     res.status(200).json({
         msg:'Eliminado Correctamente',
+        animal
     });
 }
 
 const animalesPost = async(req, res) => {
-    const { nombre, especie, role } = req.body;
-    const animal = new Animal({ nombre, especie, role });
-
-    const salt = bcryptjs.genSaltSync();
-    animal.especie = bcryptjs.hashSync(especie, salt);
+    const { nombre, especie, tipo} = req.body;
+    const animal = new Animal({ nombre, especie, tipo });
 
     await animal.save();
     res.status(202).json({

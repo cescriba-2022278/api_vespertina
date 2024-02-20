@@ -5,23 +5,17 @@ const AnimalShema = Schema({
         type: String,
         require: [true, 'El nombre es obligatorio']
     },
+    tipo:{
+        type: String,
+        require: [true, 'El tipo de animal es obligatorio']
+    },
     especie:{
         type: String,
-        require: [true, 'La especie es obligatoria'],
-        uniqued: true
-    },
-    role:{
-        type: String,
-        require: true,
-        enum: ["AEROTERRESTRE", "TERRESTRE", "ACUATICO"]
+        require: [true, 'La especie es obligatoria']
     },
     estado:{
         type: Boolean,
         default: true
-    },
-    google:{
-        type: Boolean,
-        default:  false
     }
 });
 
