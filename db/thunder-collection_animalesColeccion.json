@@ -1,0 +1,100 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "animalesColeccion",
+    "dateExported": "2024-02-07T22:24:51.019Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "64db24f6-6b9d-422d-a0f6-6acacab7878c",
+            "colId": "fe7b9780-70e4-4c64-b3ff-eac7d90ff632",
+            "containerId": "",
+            "name": "post animales",
+            "url": "http://localhost:3000/api/animales",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-07T22:07:34.701Z",
+            "modified": "2024-02-07T22:08:20.842Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"animal16\",\n  \"especie\": \"animal16\",\n  \"role\": \"TERRESTRE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2a9ce3b2-1101-436b-9347-27e98b8911d7",
+            "colId": "fe7b9780-70e4-4c64-b3ff-eac7d90ff632",
+            "containerId": "",
+            "name": "get animales",
+            "url": "http://localhost:3000/api/animales?desde=5&limite=5",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-07T22:08:35.363Z",
+            "modified": "2024-02-07T22:08:51.865Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "desde",
+                    "value": "5",
+                    "isPath": false
+                },
+                {
+                    "name": "limite",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "64d7311c-0fae-4480-a1ea-fff6f0ab6355",
+            "colId": "fe7b9780-70e4-4c64-b3ff-eac7d90ff632",
+            "containerId": "",
+            "name": "get AnimalById",
+            "url": "http://localhost:3000/api/animales/65c3fb8906cb12794c6b42ee",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-07T22:13:34.671Z",
+            "modified": "2024-02-07T22:14:48.491Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e015ddf8-0407-4639-8c59-bcb0353a7c0d",
+            "colId": "fe7b9780-70e4-4c64-b3ff-eac7d90ff632",
+            "containerId": "",
+            "name": "putAnimal",
+            "url": "http://localhost:3000/api/animales/65c3fb9b06cb12794c6b42fa",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-02-07T22:15:20.151Z",
+            "modified": "2024-02-07T22:17:10.715Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Biscocho\",\n  \"especie\": \"doberman\",\n  \"role\": \"TERRESTRE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "72f98f22-4a22-48fa-9895-e445f7ece8e1",
+            "colId": "fe7b9780-70e4-4c64-b3ff-eac7d90ff632",
+            "containerId": "",
+            "name": "delete Animal",
+            "url": "http://localhost:3000/api/animales/65c3ff5424c995556d2483f3",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-02-07T22:18:11.163Z",
+            "modified": "2024-02-07T22:18:57.214Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
